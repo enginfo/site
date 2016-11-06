@@ -79,8 +79,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.btn btn-link btn-lg').click(function() {
-                alert("clicked");
+            $('#link').click(function(e) {
+                
+                var linkHref = $(this).attr('href');
+                
+                $('html, body').animate({
+                    scrollTop: $(linkHref).offset().top
+                }, 700);
+                
+                e.preventDefault();
             });
         });
     </script>
